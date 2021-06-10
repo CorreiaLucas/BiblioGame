@@ -15,8 +15,8 @@ class Commentaire extends Model
     {
         return $this->belongsTo(Jeu::class);
     }
-    public function utilisateur()
+    public function user()
     {
-        return $this->belongsTo(Utilisateur::class);
+        return $this->belongsTo(User::class);
     }
 }

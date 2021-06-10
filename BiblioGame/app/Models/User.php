@@ -21,6 +21,14 @@ class User extends Authenticatable
         'email',
         'password',
     ];
+    public function jeus()
+    {
+        return $this->belongsToMany(Jeu::class);
+    }
+    public function commentaires()
+    {
+        return $this->hasMany(Commentaire::class);
+    }
 
     /**
      * The attributes that should be hidden for arrays.

@@ -16,10 +16,10 @@ class CreateCommentairesTable extends Migration
         Schema::create('commentaires', function (Blueprint $table) {
             $table->id();
             $table-> text('texte_com');
-            $table-> unsignedBigInteger('utilisateur_id');
-            $table->foreign('utilisateur_id')
+            $table-> unsignedBigInteger('user_id');
+            $table->foreign('user_id')
                 ->references ('id')
-                ->on ('utilisateurs')
+                ->on ('users')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
             $table-> unsignedBigInteger('jeu_id');

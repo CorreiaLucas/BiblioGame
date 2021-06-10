@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateJeuUtilisateurTable extends Migration
+class CreateJeuUserTable extends Migration
 {
     /**
      * Run the migrations.
@@ -21,10 +21,10 @@ class CreateJeuUtilisateurTable extends Migration
                 ->on ('jeus')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
-            $table-> unsignedBigInteger('utilisateur_id');
-            $table->foreign('utilisateur_id')
+            $table-> unsignedBigInteger('user_id');
+            $table->foreign('user_id')
                 ->references ('id')
-                ->on ('utilisateurs')
+                ->on ('users')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
             $table->timestamps();

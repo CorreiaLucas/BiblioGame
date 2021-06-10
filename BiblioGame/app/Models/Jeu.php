@@ -19,8 +19,8 @@ class Jeu extends Model
     {
         return $this->belongsTo(Entreprise::class);
     }
-    public function utilisateurs(){
-        return $this->belongsToMany(Utilisateur::class);
+    public function users(){
+        return $this->belongsToMany(User::class);
     }
     public function genres(){
         return $this->belongsToMany(Genre::class);
