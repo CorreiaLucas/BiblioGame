@@ -17,7 +17,12 @@ class CreateJeusTable extends Migration
             $table->id();
             $table -> text('synopsis');
             $table->text('titre');
-            
+            $table-> unsignedBigInteger('entreprise_id');
+            $table->foreign('entreprise_id')
+                ->references ('id')
+                ->on ('entreprises')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
             $table->timestamps();
         });
     }

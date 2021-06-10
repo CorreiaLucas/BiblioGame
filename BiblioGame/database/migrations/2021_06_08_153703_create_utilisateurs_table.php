@@ -15,7 +15,7 @@ class CreateUtilisateursTable extends Migration
     {
         Schema::create('utilisateurs', function (Blueprint $table) {
             $table->id();
-            $table->text('nom_Utilisateur');
+            $table->text('nom_utilisateur');
             $table->text('pseudo_utilisateur');
             $table->timestamps();
         });
