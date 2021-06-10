@@ -14,7 +14,9 @@ class JeuController extends Controller
      */
     public function index()
     {
-        //
+        $jeu = new Jeu();
+        $jeus = $jeu->getAll();
+        return view('listeJeux',compact('jeus'));
     }
 
     /**

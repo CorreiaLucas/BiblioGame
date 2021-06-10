@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use DB;
 
 class Jeu extends Model
 {
@@ -24,5 +25,11 @@ class Jeu extends Model
     }
     public function genres(){
         return $this->belongsToMany(Genre::class);
+    }
+
+    //list of jeux
+    public function getAll(){
+        $jeus = DB::table('jeus')->get();
+        return $jeus;
     }
 }
