@@ -52,30 +52,36 @@
                 <li class="active">
                     <a class="scroll-link" href="#top-content"><i class="fas fa-home"></i> Home</a>
                 </li>
+                @auth
+                    <li>
+                        <a class="scroll-link">  <i class="fas fa-cog"></i>Bienvenue, {{Auth::user()->name }} </a>
+                    </li>
+                    <li>
+                                        <a class="dropdown-item" href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                                document.getElementById('logout-form').submit();">
+                                            {{ __('Logout') }}
+                                        </a>
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            @csrf
+                                        </form>
+                                    </li>
+                @else
+                    <li>
+                        <a class="nav-link active" aria-current="page" href="{{route('login') }}"> Login </a>
+                    </li>
+                    <li>
+                        <a class = "nav-link active" aria-current="page" href="{{route('register') }}"> Register </a>
+                    </li>
+                @endauth
                 <li>
-                    <a class="scroll-link" href="#section-1"><i class="fas fa-cog"></i> What we do</a>
+                    <a class="scroll-link" href="#section-2"><i class="fas fa-cog"></i> What we do</a>
                 </li>
                 <li>
-                    <a class="scroll-link" href="#section-2"><i class="fas fa-user"></i> About us</a>
+                    <a class="scroll-link" href="#section-3"><i class="fas fa-user"></i> About us</a>
                 </li>
                 <li>
-                    <a class="scroll-link" href="#section-5"><i class="fas fa-pencil-alt"></i> Portfolio</a>
-                </li>
-                <li>
-                    <a class="scroll-link" href="#section-6"><i class="fas fa-envelope"></i> Contact us</a>
-                </li>
-                <li>
-                    <a href="#otherSections" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle" role="button" aria-controls="otherSections">
-                        <i class="fas fa-sync"></i>Other sections
-                    </a>
-                    <ul class="collapse list-unstyled" id="otherSections">
-                        <li>
-                            <a class="scroll-link" href="#section-3">Our projects</a>
-                        </li>
-                        <li>
-                            <a class="scroll-link" href="#section-4">We think that...</a>
-                        </li>
-                    </ul>
+                    <a class="scroll-link" href="#section-4"><i class="fas fa-envelope"></i> Contact us</a>
                 </li>
             </ul>
 
