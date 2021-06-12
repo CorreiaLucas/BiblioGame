@@ -20,9 +20,9 @@ use App\Http\Controllers\JeuController;
 
 Route::get('/',[JeuController::class,'index']);
 Route::get('jeux',[JeuController::class,'index']);
-
+Route::get('fiche',[JeuController::class,'show']);
 Route::resource('jeux',JeuController::class);
-
+Route::resource('fiche', JeuController::class);
 //Route::get('/dashboard', function () {
 //    return view('dashboard');
 //})->middleware(['auth'])->name('dashboard');

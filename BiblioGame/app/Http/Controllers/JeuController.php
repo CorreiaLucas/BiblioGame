@@ -51,7 +51,7 @@ class JeuController extends Controller
     {
         $entreprise-> jeu->entreprise;
         $jeu->with('genres')->get();
-        return view('fichejeu', compact('jeu'));
+        return view('fichejeu', compact('jeu, entreprise'));
     }
 
     /**

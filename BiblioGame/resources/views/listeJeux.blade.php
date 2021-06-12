@@ -17,8 +17,10 @@
                 <img  class="card-img-top" src = "{{asset('images/'.$jeu->image)}}">
                 <div class="card-body">
                     <h5 class="card-title">{{$jeu->titre}}</h5>
-                    
-                    <a href="{{ route('jeus.show', $jeu->id)}}" class="btn btn-primary">Voir</a>
+                    <a href="{{ route('jeux.show', $jeu->id)}}" class="btn btn-primary">Voir</a>
+                    @auth
+                        <a href="{{ route('jeux.show', $jeu->id)}}" class="btn btn-primary">Voir</a>
+                    @endauth
                 </div>
                 <h3></h3>
             </div>
