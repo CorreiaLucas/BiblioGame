@@ -49,7 +49,9 @@ class JeuController extends Controller
      */
     public function show(Jeu $jeu)
     {
-        //
+        $entreprise-> jeu->entreprise;
+        $jeu->with('genres')->get();
+        return view('fichejeu', compact('jeu'));
     }
 
     /**
