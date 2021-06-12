@@ -16,6 +16,7 @@ class JeuController extends Controller
     {
         $jeu = new Jeu();
         $jeus = $jeu->getAll();
+        $jeu->with('genres')->get();
         return view('listeJeux',compact('jeus'));
     }
 

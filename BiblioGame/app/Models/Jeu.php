@@ -10,7 +10,7 @@ class Jeu extends Model
 {
     use HasFactory;
     public $timestamps =false;
-    protected $fillable =['synopsis','titre'];
+    protected $fillable =['synopsis','titre', 'image'];
 
     public function commentaires()
     {

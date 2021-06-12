@@ -17,6 +17,7 @@ class CreateJeusTable extends Migration
             $table->id();
             $table -> text('synopsis');
             $table->text('titre');
+            $table->text('image');
             $table-> unsignedBigInteger('entreprise_id');
             $table->foreign('entreprise_id')
                 ->references ('id')

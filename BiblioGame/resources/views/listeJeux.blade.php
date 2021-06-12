@@ -13,11 +13,17 @@
     @foreach($jeus as $jeu)
         <body>
         <div class='col-md-2 col-sm-4 col xs-6'>
-            <div class='thumbnail bg-dark text-white'>
-                <h1>{{$jeu->id}} </h1>
-                <h1>{{$jeu->titre}}</h1>
+            <div class="card" >
+                <img  class="card-img-top" src = "{{asset('images/'.$jeu->image)}}">
+                <div class="card-body">
+                    <h5 class="card-title">{{$jeu->titre}}</h5>
+                    
+                    <a href="#" class="btn btn-primary">Voir</a>
+                </div>
+                <h3></h3>
             </div>
         </div>
     @endforeach
 </section>
 @endsection
+
