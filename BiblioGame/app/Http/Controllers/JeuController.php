@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Jeu;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class JeuController extends Controller
 {
@@ -30,15 +31,25 @@ class JeuController extends Controller
         //
     }
 
+    public function attach(Jeu $jeu,User $user ){
+        $idJeu = $jeu->id;
+        $idUser=$user->id;
+
+        $jeu->user->attach($idUser);    
+    }
+    
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Jeu $jeu,User $user)
     {
-        //
+        $idJeu = $jeu->id;
+        $idUser=$user->getId;
+
+        $user->jeus->attach($idJeu);  
     }
 
     /**

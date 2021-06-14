@@ -19,10 +19,11 @@
                     <h5 class="card-title">{{$jeu->titre}}</h5>
                     <a href="{{ route('jeux.show', $jeu->id)}}" class="btn btn-primary">Voir</a>
                     @auth
-                        <a href="{{ route('jeux.show', $jeu->id)}}" class="btn btn-primary">Voir</a>
-                    @endauth
+                        <a href="{{ route('jeux.store' )}}" class="btn btn-primary">ajouter</a>
+                    @endauth    
                 </div>
-                <h3></h3>
+                <h3>
+                </h3>
             </div>
         </div>
     @endforeach

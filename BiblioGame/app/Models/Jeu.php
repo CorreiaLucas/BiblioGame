@@ -32,4 +32,6 @@ class Jeu extends Model
         $jeus = DB::table('jeus')->get();
         return $jeus;
     }
+    
 }
+
