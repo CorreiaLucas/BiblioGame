@@ -48,8 +48,9 @@ class JeuController extends Controller
     {
         $idJeu = $jeu->id;
         $idUser=$user->getId;
-
-        $user->jeus->attach($idJeu);  
+        print_r($idJeu,$idUser);
+        $user->jeus->attach($idJeu);
+        return view('index');  
     }
 
     /**

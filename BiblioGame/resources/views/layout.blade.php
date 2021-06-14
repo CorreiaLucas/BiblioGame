@@ -143,25 +143,7 @@
         </footer>
         <!-- Javascript -->
         <script type='text/javascript'>
-        jQuery(document).ready(function() {
-        
-        $('.dismiss, .overlay').on('click', function() {
-            $('.sidebar').removeClass('active');
-            $('.overlay').removeClass('active');
-        });
-
-        $('.open-menu').on('click', function(e) {
-            e.preventDefault();
-            $('.sidebar').addClass('active');
-            $('.overlay').addClass('active');
-            // close opened sub-menus
-            $('.collapse.show').toggleClass('show');
-            $('a[aria-expanded=true]').attr('aria-expanded', 'false');
-        });
-
-        /* other code */
-
-        });</script>
+</script>
 
         <script type='text/javascript' src="{{asset('/lib/js/bootstrap.bundle.min.js')}}"></script>
         <script src="{{asset('/lib/jquery/jquery-3.6.2.min.js')}}"></script>

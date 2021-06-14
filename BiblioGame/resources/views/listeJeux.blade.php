@@ -19,7 +19,7 @@
                     <h5 class="card-title">{{$jeu->titre}}</h5>
                     <a href="{{ route('jeux.show', $jeu->id)}}" class="btn btn-primary">Voir</a>
                     @auth
-                        <a href="{{ route('jeux.store' )}}" class="btn btn-primary">ajouter</a>
+                        <a href="{{ route('jeux.store', $jeu->id, Auth::user()->getId() )}}" class="btn btn-primary">ajouter</a>
                     @endauth    
                 </div>
                 <h3>
