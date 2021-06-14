@@ -13,7 +13,7 @@
             <div class="col-md-8">
                 <div class="card-body">
                     <h5 class="card-title">Titre : {{ $jeu->titre }}</h5>
-                    <p class="card-text">Entreprise : {{ $entreprise->lib_entreprise }}</p>
+                    <p class="card-text">Entreprise : {{ $entreprise}}</p>
                     <ul>
                         @foreach($jeu->genres as $genre)
                             <li>{{ $genre->lib_genre}}</li>

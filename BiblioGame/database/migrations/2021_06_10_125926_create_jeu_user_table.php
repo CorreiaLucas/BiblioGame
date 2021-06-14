@@ -13,7 +13,7 @@ class CreateJeuUserTable extends Migration
      */
     public function up()
     {
-        Schema::create('jeu_utilisateur', function (Blueprint $table) {
+        Schema::create('jeu_user', function (Blueprint $table) {
             $table->id();
             $table-> unsignedBigInteger('jeu_id');
             $table->foreign('jeu_id')
@@ -38,6 +38,6 @@ class CreateJeuUserTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('jeu_utilisateur');
+        Schema::dropIfExists('jeu_user');
     }
 }
