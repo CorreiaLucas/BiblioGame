@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\JeuController;
+use App\Http\Controllers\JeuUserFormController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +25,9 @@ Route::get('fiche',[JeuController::class,'show']);
 
 Route::resource('jeux',JeuController::class);
 Route::resource('fiche', JeuController::class);
+
+
+Route::post('jeuuserformulaire/{id}',[JeuUserFormController::class,'attach']);
 //Route::get('/dashboard', function () {
 //    return view('dashboard');
 //})->middleware(['auth'])->name('dashboard');

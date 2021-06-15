@@ -44,13 +44,11 @@ class JeuController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Jeu $jeu,User $user)
+    public function store(Request $request)
     {
         $idJeu = $jeu->id;
-        $idUser=$user->getId;
-        print_r($idJeu,$idUser);
-        $user->jeus->attach($idJeu);
-        return view('index');  
+        auth()->user()->jeus()->attach($idJeu);
+        return view('index');
     }
 
     /**

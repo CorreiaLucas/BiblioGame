@@ -11,7 +11,6 @@
 @section('contenu')
 <section class='row'>
     @foreach($jeus as $jeu)
-        <body>
         <div class='col-md-2 col-sm-4 col xs-6'>
             <div class="card" >
                 <img  class="card-img-top" src = "{{asset('images/'.$jeu->image)}}">
@@ -19,11 +18,12 @@
                     <h5 class="card-title">{{$jeu->titre}}</h5>
                     <a href="{{ route('jeux.show', $jeu->id)}}" class="btn btn-primary">Voir</a>
                     @auth
-                        <a href="{{ route('jeux.store', $jeu->id, Auth::user()->getId() )}}" class="btn btn-primary">ajouter</a>
-                    @endauth    
+                    <form action="{{ url('jeuuserformulaire', $jeu->id)}}" method="POST">
+                        @csrf
+                        <button type="submit" name="1"  id="1" value="Ajouter" class="btn btn-primary"> Ajouter</button>  
+                    </form>
+                    @endauth
                 </div>
-                <h3>
-                </h3>
             </div>
         </div>
     @endforeach

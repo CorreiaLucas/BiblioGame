@@ -45,27 +45,27 @@
             </div>
 
             <div class="logo">
-                <h3><a href="index.html">Bootstrap 4 Template with Sidebar Menu</a></h3>
+                <h3><a href="{{ route('jeux.index') }}"></a></h3>
             </div>
 
             <ul class="list-unstyled menu-elements">
                 <li class="active">
-                    <a class="scroll-link" href="#top-content"><i class="fas fa-home"></i> Home</a>
+                    <a class="nav-link active" aria-current="page" href="{{ route('jeux.index') }}"><i class="fas fa-home"></i> Home </a>
                 </li>
                 @auth
                     <li>
                         <a class="scroll-link">  <i class="fas fa-cog"></i>Bienvenue, {{Auth::user()->name }} </a>
                     </li>
                     <li>
-                                        <a class="dropdown-item" href="{{ route('logout') }}"
-                                            onclick="event.preventDefault();
-                                                document.getElementById('logout-form').submit();">
-                                            {{ __('Logout') }}
-                                        </a>
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            @csrf
-                                        </form>
-                                    </li>
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">
+                            {{ __('Logout') }}
+                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                    </li>
                 @else
                     <li>
                         <a class="nav-link active" aria-current="page" href="{{route('login') }}"> Login </a>
