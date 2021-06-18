@@ -26,7 +26,7 @@ class Jeu extends Model
     public function genres(){
         return $this->belongsToMany(Genre::class);
     }
-
+    
     //list of jeux
     public function getAll(){
         $jeus = DB::table('jeus')->get();
