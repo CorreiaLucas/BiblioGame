@@ -45,7 +45,7 @@
             </div>
 
             <div class="logo">
-                <h3><a href="{{ route('jeux.index') }}"></a></h3>
+                 <a href="{{ route('jeux.index') }}" ><img src="https://img.icons8.com/small/96/4a90e2/controller.png"/> </a><h2>BiblioGame </h2>
             </div>
 
             <ul class="list-unstyled menu-elements">
@@ -85,7 +85,7 @@
                     </li>
                 @endauth
                 <li>
-                    <a class="scroll-link" href="#section-2"><i class="fas fa-cog"></i> What we do</a>
+                    <a class="nav-link active" href="{{ route('entreprise') }}"><i class="fas fa-cog"></i> What we do</a>
                 </li>
                 <li>
                     <a class="nav-link active" href="{{ route('contact') }}"><i class="fas fa-envelope"></i> Contact us</a>

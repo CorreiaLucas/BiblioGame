@@ -47,7 +47,8 @@ class User extends Authenticatable
     }
 
     public function getJeux(){
-        $userID = DB::table('jeu_user')->select('jeu_id')->where('user_id',1); 
+        $id = auth()->user()->id;
+        $userID = DB::table('jeu_user')->select('jeu_id')->where('user_id',$id); 
         $jeus = DB::table('jeus')->join('jeu_user', 'jeus.id', '=', 'jeu_user.jeu_id')->whereIn('jeus.id',$userID)->distinct()->get();
         //$jeus = DB::table('jeus')->join('jeu_user', 'jeus.id', '=', 'jeu_user.jeu_id')->whereIn('jeus.id',$userID){
         //    $query->select('jeu_user.jeu_id')

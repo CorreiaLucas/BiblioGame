@@ -22,6 +22,11 @@ use App\Http\Controllers\UserController;
 Route::get('contact', function() {
     return view('pageContact');
 })->name('contact');
+
+Route::get('entreprise', function() {
+    return view('pageEntreprise');
+})->name('entreprise');
+
 Route::get('/',[JeuController::class,'index']);
 Route::get('jeux',[JeuController::class,'index']);
 Route::get('fiche',[JeuController::class,'show']);
