@@ -42,15 +42,7 @@ class JeuController extends Controller
     {
        //
     }
-    public function getID(Request $request, Jeu $jeu)
-    {      
-        
-       
-
-        jeus()->show($jeuID);
-        return view('ajoutJeu');
-        
-    }
+    
     /**
      * Display the specified resource.
      *

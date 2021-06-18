@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\JeuController;
 use App\Http\Controllers\JeuUserFormController;
 use App\Http\Controllers\UserController;
-
+use App\Http\Controllers\CommentaireController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -38,7 +38,7 @@ Route::resource('user',UserController::class);
 Route::resource('jeux',JeuController::class);
 Route::resource('fiche', JeuController::class);
 
-
+Route::post('addcomment/{id}',[CommentaireController::class,'store']);
 Route::post('fiche/{id}',[JeuController::class,'show']);
 Route::post('jeuuserformulaire/{id}',[JeuUserFormController::class,'attach']);
 //Route::get('/dashboard', function () {
