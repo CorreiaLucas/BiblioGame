@@ -26,7 +26,7 @@ Route::get('fiche',[JeuController::class,'show']);
 Route::resource('jeux',JeuController::class);
 Route::resource('fiche', JeuController::class);
 
-
+Route::post('fiche/{id}',[JeuController::class,'show']);
 Route::post('jeuuserformulaire/{id}',[JeuUserFormController::class,'attach']);
 //Route::get('/dashboard', function () {
 //    return view('dashboard');

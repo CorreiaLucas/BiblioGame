@@ -16,7 +16,10 @@
                 <img  class="card-img-top" src = "{{asset('images/'.$jeu->image)}}">
                 <div class="card-body">
                     <h5 class="card-title">{{$jeu->titre}}</h5>
-                    <a href="{{ route('jeux.show', $jeu->id)}}" class="btn btn-primary">Voir</a>
+                    <form action="{{ url('fiche', $jeu->id)}}" method="POST">
+                        @csrf
+                        <button type="submit" name="1"  id="1" value="voir" class="btn btn-primary"> Voir</button>  
+                    </form>
                     @auth
                     <form action="{{ url('jeuuserformulaire', $jeu->id)}}" method="POST">
                         @csrf

@@ -17,7 +17,7 @@ class JeuController extends Controller
     {
         $jeu = new Jeu();
         $jeus = $jeu->getAll();
-        $jeu->with('genres')->get();
+    
         return view('listeJeux',compact('jeus'));
     }
 
@@ -31,12 +31,6 @@ class JeuController extends Controller
         //
     }
 
-    public function attach(Jeu $jeu,User $user ){
-        $idJeu = $jeu->id;
-        $idUser=$user->id;
-
-        $jeu->user->attach($idUser);    
-    }
     
     /**
      * Store a newly created resource in storage.
@@ -46,22 +40,31 @@ class JeuController extends Controller
      */
     public function store(Request $request)
     {
-        $idJeu = $jeu->id;
-        auth()->user()->jeus()->attach($idJeu);
-        return view('index');
+       //
     }
+    public function getID(Request $request, Jeu $jeu)
+    {      
+        
+       
 
+        jeus()->show($jeuID);
+        return view('ajoutJeu');
+        
+    }
     /**
      * Display the specified resource.
      *
      * @param  \App\Models\Jeu  $jeu
      * @return \Illuminate\Http\Response
      */
-    public function show(Jeu $jeu)
-    {
-        $entreprise= $jeu->entreprise;
+    public function show(Request $request, Jeu $jeu)
+    {   
+        $jeuID= $request->id;
         
-        return view('fichejeu', compact('jeu', 'entreprise'));
+        $jeu= Jeu::find($jeuID);
+        
+       
+        return view('fichejeu', compact('jeu'));
     }
 
     /**

@@ -14,6 +14,6 @@ class JeuUserFormController extends Controller
 
         auth()->user()->jeus()->attach($jeuID);
         return view('ajoutJeu');
-        return 'jeu ajouté pour l user : ' . $user->id . ' avec le jeu: ' . $jeuID;
+        
     }
 }
