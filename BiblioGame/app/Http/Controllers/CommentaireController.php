@@ -47,7 +47,7 @@ class CommentaireController extends Controller
                 'jeu_id' => $jeuID
             ));
        
-        return 'ok';
+        return view('fichejeu', compact('jeu'));
         
     }
 

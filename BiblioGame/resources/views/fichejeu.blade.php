@@ -16,19 +16,18 @@
             <div class="col-md-8">
                 <div class="card-body">
                     
-                    <p class="card-text">: {{ $jeu->entreprise->lib_entreprise}}</p>
+                    <h3 class="card-title">Editeur: {{ $jeu->entreprise->lib_entreprise}}</h3>
+                    @foreach($jeu->genres as $genre)
+                        <span class="badge badge-secondary">{{ $genre->lib_genre}}</span>
+                        
+                    @endforeach
                     <p class="card-text"> {{ $jeu->synopsis}}</p>
-
-                    <ul>
-                        @foreach($jeu->genres as $genre)
-                            <li>{{ $genre->lib_genre}}</li>
-                        @endforeach
-                    </ul>
+                     
                     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
                     @auth
                     <form action="{{ url('jeuuserformulaire', $jeu->id)}}" method="POST">
                         @csrf
-                        <button type="submit" name="1"  id="1" value="Ajouter" class="btn btn-primary"> Ajouter</button>  
+                        <button type="submit" name="1"  id="1" value="Ajouter" class="btn btn-success"> Ajouter à ma liste</button>  
                     </form>
                     @endauth
                 </div>
@@ -59,7 +58,7 @@
                         @enderror
                     </div>
                     <br>
-                    <button type="submit" class="btn btn-secondary">Envoyer !</button>
+                    <button type="submit" class="btn btn-secondary">Commenter</button>
                 </form>
             @endauth
         </div>
