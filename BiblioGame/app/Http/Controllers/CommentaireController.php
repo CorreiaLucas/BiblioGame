@@ -35,7 +35,12 @@ class CommentaireController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = auth()->user();
+        $jeuID= $request->id;
+        Commentaire::create($request->all());
+        $jeu= Jeu::find($jeuID);
+        return view('fichejeu', compact('jeu'));
+        
     }
 
     /**
