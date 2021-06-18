@@ -14,7 +14,7 @@ class UserController extends Controller
     {
         $user = new User();
         $jeus = $user->getJeux();
-        return view('listeJeux',compact('jeus'));
+        return view('profil',compact('jeus'));
     }
     
 }

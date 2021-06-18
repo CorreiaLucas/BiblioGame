@@ -54,25 +54,31 @@
                 </li>
                 @auth
                     <li>
-                        <a class="scroll-link">  <i class="fas fa-cog"></i>Bienvenue, {{Auth::user()->name }} </a>
+                        <a class="scroll-link"> </i>Bienvenue, {{Auth::user()->name }} </a>
                     </li>
                     <li>
+                
                         <a class="dropdown-item" href="{{ route('logout') }}"
+                        
                             onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">
+                                <img src="https://img.icons8.com/small/22/ffffff/door.png"/>
                             {{ __('Logout') }}
+                            
                         </a>
+                        
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        
                             @csrf
                         </form>
                     </li>
                     <li>
-                        <a class="nav-link active" aria-current="page" href="{{route('user.index') }}"> Profil </a>
+                        <a class="nav-link active" aria-current="page" href="{{route('user.index') }}"><i class="fas fa-user"></i> Profil </a>
                     </li>
 
                 @else
                     <li>
-                        <a class="nav-link active" aria-current="page" href="{{route('login') }}"> Login </a>
+                        <a class="nav-link active" aria-current="page" href="{{route('login') }}"><img src="https://img.icons8.com/small/16/000000/door.png"/> Login </a>
                     </li>
                     <li>
                         <a class = "nav-link active" aria-current="page" href="{{route('register') }}"> Register </a>
@@ -82,10 +88,7 @@
                     <a class="scroll-link" href="#section-2"><i class="fas fa-cog"></i> What we do</a>
                 </li>
                 <li>
-                    <a class="scroll-link" href="#section-3"><i class="fas fa-user"></i> About us</a>
-                </li>
-                <li>
-                    <a class="scroll-link" href="#section-4"><i class="fas fa-envelope"></i> Contact us</a>
+                    <a class="nav-link active" href="{{ route('contact') }}"><i class="fas fa-envelope"></i> Contact us</a>
                 </li>
             </ul>
 

@@ -19,11 +19,15 @@ use App\Http\Controllers\UserController;
 //Route::get('/', function () {
 //    return view('welcome');
 //});
-
+Route::get('contact', function() {
+    return view('pageContact');
+})->name('contact');
 Route::get('/',[JeuController::class,'index']);
 Route::get('jeux',[JeuController::class,'index']);
 Route::get('fiche',[JeuController::class,'show']);
 Route::get('profil',[UserController::class,'index']);
+
+
 
 Route::resource('user',UserController::class);
 Route::resource('jeux',JeuController::class);
