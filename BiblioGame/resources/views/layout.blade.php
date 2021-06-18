@@ -66,6 +66,10 @@
                             @csrf
                         </form>
                     </li>
+                    <li>
+                        <a class="nav-link active" aria-current="page" href="{{route('user.index') }}"> Profil </a>
+                    </li>
+
                 @else
                     <li>
                         <a class="nav-link active" aria-current="page" href="{{route('login') }}"> Login </a>

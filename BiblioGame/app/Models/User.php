@@ -6,6 +6,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use DB;
 
 class User extends Authenticatable
 {
@@ -21,6 +22,7 @@ class User extends Authenticatable
         'email',
         'password',
     ];
+
     public function jeus()
     {
         return $this->belongsToMany(Jeu::class);
@@ -43,6 +45,18 @@ class User extends Authenticatable
     {
     return $this->id;
     }
+
+    public function getJeux(){
+        $userID = DB::table('jeu_user')->select('jeu_id')->where('user_id',1);
+        $jeus = DB::table('jeus')->join('jeu_user', 'jeus.id', '=', 'jeu_user.jeu_id')->whereIn('jeus.id',$userID)->get();
+        //$jeus = DB::table('jeus')->join('jeu_user', 'jeus.id', '=', 'jeu_user.jeu_id')->whereIn('jeus.id',$userID){
+        //    $query->select('jeu_user.jeu_id')
+        //    ->where('user_id', 1);
+        //})->get();
+        return $jeus;
+    }
+
+
     /**
      * The attributes that should be cast to native types.
      *
@@ -51,4 +65,5 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
 }
