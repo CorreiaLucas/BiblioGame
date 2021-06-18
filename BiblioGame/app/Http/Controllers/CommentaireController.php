@@ -28,7 +28,7 @@ class CommentaireController extends Controller
     {
         //
     }
-
+    
     /**
      * Store a newly created resource in storage.
      *
@@ -38,10 +38,11 @@ class CommentaireController extends Controller
     public function store(InsertCommentRequest $request, Jeu $jeu)
     {
         $user = auth()->user();
-        $jeuID= $jeu->id;
+        $jeuID= $request->id;
+        $jeu= Jeu::find($jeuID);
         DB::table('commentaires')->insert(
             array(
-                'texte_com' => $request,
+                'texte_com' => $request->texte_com,
                 'user_id' => $user->id,
                 'jeu_id' => $jeuID
             ));
