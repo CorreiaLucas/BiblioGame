@@ -9,7 +9,7 @@
 @endsection
 
 @section('contenu')
-    <img src="{{asset('images/collection.jpg')}}">
+    <img class="bandeau" src="{{asset('images/collection.jpg')}}">
     <h2> Une bibliothèque virtuelle accessible à tous</h2>
     </br>
     <h3>Il n'a jamais été aussi simple de regrouper vos différents jeux dans un seul endroit. </h3> </br>
