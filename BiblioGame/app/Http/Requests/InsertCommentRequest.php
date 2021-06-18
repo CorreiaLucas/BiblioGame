@@ -24,7 +24,7 @@ class InsertCommentRequest extends FormRequest
     public function rules()
     {
         return [
-            'texte_com' =>[ 'string', 'max:1000']
+            'texte_com' =>['required', 'string', 'max:1000']
         ];
     }
 }

@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Commentaire;
 use Illuminate\Http\Request;
-
+use DB;
+use App\Http\Requests\InsertCommentRequest;
+use App\Models\Jeu;
 class CommentaireController extends Controller
 {
     /**
@@ -33,13 +35,18 @@ class CommentaireController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(InsertCommentRequest $request, Jeu $jeu)
     {
         $user = auth()->user();
-        $jeuID= $request->id;
-        Commentaire::create($request->all());
-        $jeu= Jeu::find($jeuID);
-        return view('fichejeu', compact('jeu'));
+        $jeuID= $jeu->id;
+        DB::table('commentaires')->insert(
+            array(
+                'texte_com' => $request,
+                'user_id' => $user->id,
+                'jeu_id' => $jeuID
+            ));
+       
+        return 'ok';
         
     }
 
