@@ -129,24 +129,7 @@
         
     
         <footer class ="footer">
-            <section class="row">
-                    <div class="col-sm-4">
-                        <p><strong>Nos coordonnées :</strong></p>
-                        <strong>BiblioGame </strong> <br/>
-                        15 Boulevard André Latarjet<br/>
-                        69100 Villeurbanne  <br/>
-                        <p><strong>06 00 00 00 00</strong></p>
-                    </div>
-                    <div class="col-sm-4">
-                        <p><strong>Nos réseaux sociaux :</strong></p>
-                        TWITTER<br/>
-                        FACEBOOK
-                        <br/>
-                    </div>
-                    <div class="col-sm-4">
-                        <p><strong>Pour nous trouver :</strong></p>
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.649003307103!2d2.355835951228717!3d48.86490317918651!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e0540a35a13%3A0xfb3ff09793509353!2s15%20Rue%20R%C3%A9aumur%2C%2075003%20Paris!5e0!3m2!1sfr!2sfr!4v1609918545725!5m2!1sfr!2sfr"></iframe>                </div>
-            </section>   
+            <p>copyright CORREIA DJELLAS</p>
         </footer>
         <!-- Javascript -->
         <script type='text/javascript'>
